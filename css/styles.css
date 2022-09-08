@@ -7,11 +7,11 @@
     --primary-text-color: #212121;
     --secondary-text-color: #757575;
     --tertiary-text-color: #FFFFFF;
-    --secondary-button-bg-color: #2196F3;
+    --secondary-button-bg-color: #188ce8;
     --primary-button-bg-color: #F5F4FA;
     --primary-bg-color: #2F303A;
     --icons-color: #AFB1B8;
-    --transition-dur-and-func: 250ms linear;
+    --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2,1);
 }
 body{
     overflow-x: hidden;
@@ -145,7 +145,7 @@ li {list-style-type: none;}
     letter-spacing: 0.02em;
     color: var(--secondary-text-color);
     fill: currentColor;
-    transition: var(--transition-dur-and-func);
+    transition: color var(--transition-dur-and-func);
 }
 .logo-header{
     text-decoration: none;
@@ -166,7 +166,7 @@ li {list-style-type: none;}
     line-height: 1.1;
     letter-spacing: 0.02em;
     color: var(--primary-text-color);
-    transition: var(--transition-dur-and-func);
+    transition: color var(--transition-dur-and-func);
 }
     
     
@@ -186,17 +186,18 @@ li {list-style-type: none;}
     width: 1600px;
     height: 600px;
 }
-.button-hero:active,
 .button-hero:focus,
-.button-hero:hover{background-color: var(--accent-color);
+.button-hero:hover{
+    background-color: var(--secondary-button-bg-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;}
 .button-hero {
+    background-color: var(--accent-color);
     cursor: pointer;
     font-family: inherit;
     color: var(--tertiary-text-color);
     border: none;
-    background-color: var(--secondary-button-bg-color);
+    transition: background-color var(--secondary-button-bg-color); 
     border-radius: 4px;
     font-weight: 700;
     font-size: 16px;
@@ -311,8 +312,7 @@ li {list-style-type: none;}
 .social-list-link:hover,
 .social-list-link:focus{
     background-color: var(--accent-color);
-    color: var(--tertiary-text-color);
-    fill: currentColor;
+    fill: var(--tertiary-text-color);
 }
 
 .social-list-link{
@@ -324,11 +324,11 @@ li {list-style-type: none;}
     border-radius: 50%;
     background-color: var(--tertiary-text-color);
     fill: var(--icons-color);
-    transition: var(--transition-dur-and-func);
+    transition: color var(--transition-dur-and-func), background-color var(--transition-dur-and-func);
 }
 .social-list-icon{
     width: 20px;
-    height: 16.25px;
+    height: 20px;
 }
 .our-team{
     font-style: normal;
@@ -399,22 +399,21 @@ li {list-style-type: none;}
 }
 
 .client-logo{
+    transition: var(--transition-dur-and-func);
     width: 106px;
     height: 60px;
     fill: var(--icons-color)
 }
 .link-logoclient:hover .client-logo,
 .link-logoclient:focus .client-logo{
-    transition: var(--transition-dur-and-func);
     fill: var(--accent-color);
-    border: var(--accent-color);
 }
 .link-logoclient:focus,
 .link-logoclient:hover{
-    border: 1px solid var(--accent-color);
+    border-color: var(--accent-color);
 }
 .link-logoclient{
-    transition: var(--transition-dur-and-func);
+    transition: color var(--transition-dur-and-func);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -435,7 +434,7 @@ li {list-style-type: none;}
     background-color: var(--accent-color);
 }
 .footer-social-list-link{
-    transition: var(--transition-dur-and-func);
+    transition: background-color var(--transition-dur-and-func);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -485,7 +484,7 @@ li {list-style-type: none;}
     color:var(--accent-color);
 }
 .number-footer{
-    transition: var(--transition-dur-and-func);
+    transition: color var(--transition-dur-and-func);
     font-style: normal;
     text-decoration: none;
     font-size: 14px;
@@ -496,7 +495,7 @@ li {list-style-type: none;}
     color:var(--accent-color);
 }
 .map-footer{
-    transition: var(--transition-dur-and-func);
+    transition: color var(--transition-dur-and-func);
     font-style: normal;
     text-decoration: none;
     font-weight: 400;
@@ -509,7 +508,7 @@ li {list-style-type: none;}
     color:var(--accent-color);
 }
 .mail-footer{
-    transition: var(--transition-dur-and-func);
+    transition: color var(--transition-dur-and-func);
     font-style: normal;
     text-decoration: none;
     line-height: 1.7;
@@ -539,7 +538,7 @@ li {list-style-type: none;}
     background-color: var(--accent-color); color: var(--tertiary-text-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);}
 .button-portfolio {
-    transition: var(--transition-dur-and-func);
+    transition: color var(--transition-dur-and-func),background-color var(--transition-dur-and-func), box-shadow var(--transition-dur-and-func);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.6;
@@ -671,6 +670,7 @@ li {list-style-type: none;}
     background-color: #FFFFFF;
 }
 .modal-close-btn{
+    cursor: pointer;
     position: absolute;
     right: 8px;
     top: 8px;
