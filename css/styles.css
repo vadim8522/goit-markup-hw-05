@@ -324,7 +324,7 @@ li {list-style-type: none;}
     border-radius: 50%;
     background-color: var(--tertiary-text-color);
     fill: var(--icons-color);
-    transition: color var(--transition-dur-and-func), background-color var(--transition-dur-and-func);
+    transition: fill var(--transition-dur-and-func), background-color var(--transition-dur-and-func);
 }
 .social-list-icon{
     width: 20px;
@@ -399,7 +399,7 @@ li {list-style-type: none;}
 }
 
 .client-logo{
-    transition: var(--transition-dur-and-func);
+    transition: fill var(--transition-dur-and-func);
     width: 106px;
     height: 60px;
     fill: var(--icons-color)
@@ -413,7 +413,7 @@ li {list-style-type: none;}
     border-color: var(--accent-color);
 }
 .link-logoclient{
-    transition: color var(--transition-dur-and-func);
+    transition: border-color var(--transition-dur-and-func);
     display: flex;
     align-items: center;
     justify-content: center;
